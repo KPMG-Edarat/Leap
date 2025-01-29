@@ -79,6 +79,20 @@
             text-align: center;
         }
     </style>
+    <script>
+    function restartChat() {
+        // Clear localStorage or sessionStorage to reset the session
+        localStorage.clear();  // Or sessionStorage.clear();
+        
+        // Append a unique query string to the URL to prevent caching
+        var currentURL = window.location.href.split("?")[0];  // Remove any existing query parameters
+        var newSessionURL = currentURL + "?newSession=" + new Date().getTime();  // Add unique query string
+        
+        // Force a reload to reset session and session storage
+        window.location.replace(newSessionURL);
+    }
+</script>
+
 </head>
 <body>
     <div class="content">
@@ -101,6 +115,8 @@
                 class="chatbot-frame"
                 src="https://copilotstudio.microsoft.com/environments/Default-fc3b3043-d920-470a-8ae0-b2610bb2aea5/bots/cr0c2_qaAgent/webchat?__version__=2">
             </iframe>
+              <button class="new-chat-button" onclick="restartChat()">Restart Chat</button>
+
             <div class="footer">Powered by LEAP Entertainment</div>
         </div>
     </div>
