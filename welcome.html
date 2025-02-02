@@ -62,7 +62,7 @@
         text-align: center;
     }
     .navigate-button {
-        background-color: #c04fc0; /* Slightly darker pink */
+        background-color: #0091DA; /* Slightly darker pink */
         color: white;
         padding: 10px 20px;
         border: none;
@@ -71,7 +71,7 @@
         cursor: pointer;
     }
     .navigate-button:hover {
-        background-color: #a13cbc;
+        background-color: #0091DA;
     }
     .info-section {
         margin-top: 20px;
@@ -105,7 +105,7 @@
     }
     .scrolling-container {
         position: fixed;
-        bottom: 120px; /* Moved higher */
+        bottom: 100px; /* Moved higher */
         width: 100%;
         overflow: hidden;
         white-space: nowrap;
@@ -116,7 +116,7 @@
     .scrolling-title {
         font-size: 18px;
         font-weight: bold;
-        color: #ff60ff; /* Pink text */
+        color: #A7A8AA; /* Pink text */
         margin-bottom: 12px; /* Added more spacing */
         display: flex;
         align-items: center;
@@ -132,6 +132,20 @@
         white-space: nowrap;
         animation: scrollLeft 40s linear infinite; /* Starts immediately */
     }
+.scrolling-container {
+    position: fixed;
+    top: 80%; /* Move the scrolling container further down */
+    width: 100%;
+    height: 60px; /* Set a specific height to ensure content is visible */
+    overflow: hidden;
+    white-space: nowrap;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 20px 0;
+    text-align: center;
+}
+
+
+
     .scrolling-box {
         display: inline-block;
         background: rgba(0, 0, 0, 0.7);
@@ -162,13 +176,13 @@
 </head>
 <body>
 <div class="logo-container">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Microsoft Logo">
+   
     <img src="kpmg.svg" alt="KPMG Logo">
 </div>
 <div class="content">
-    <h1>Welcome to LEAP 2025 and Industry 5.0 Solutions</h1>
+    <h1>Welcome to LEAP 2025 and the Future of Agentic AI</h1>
     <p>
-        Discover cutting-edge advancements in AI and automation, powered by <strong>Microsoft Services</strong>  and <strong>KPMG</strong>.
+        Experience the next wave of artificial intelligence and automation, brought to you by <strong>KPMG</strong>.
     </p>
 </div>
 <div class="info-section">
@@ -192,27 +206,26 @@
     <button class="navigate-button" onclick="window.location.href='index.html'">Start</button>
 </div>
 <div class="scrolling-container">
-    <div class="scrolling-title">
-        <img src="trend.png" alt="Trend Icon"> Key Trends in Industry 5.0
-    </div>
-    <div class="scrolling-text">
-        <span class="scrolling-box">AI & Human Collaboration</span>
-        <span class="scrolling-box">Hyper-Personalization in Manufacturing</span>
-        <span class="scrolling-box">Sustainable & Circular Economy</span>
-        <span class="scrolling-box">Resilient & Decentralized Supply Chains</span>
-        <span class="scrolling-box">Human-Centric AI Design</span>
-        <span class="scrolling-box">Next-Gen Cobots (Collaborative Robots)</span>
-        <span class="scrolling-box">Ethical & Transparent AI</span>
-        <span class="scrolling-box">Real-time Data-Driven Decision Making</span>
-        <span class="scrolling-box">Smart Factories 2.0</span>
-        <span class="scrolling-box">Quantum Computing in Industry</span>
-        <span class="scrolling-box">Well-being & Ergonomics in Workplaces</span>
-        <span class="scrolling-box">Blockchain for Secure Transactions</span>
-        <span class="scrolling-box">Digital Twins for Predictive Maintenance</span>
-        <span class="scrolling-box">Augmented Intelligence</span>
-        <span class="scrolling-box">Energy-Efficient Manufacturing</span>
-    </div>
-</div>
-<div class="footer">Powered by Microsoft & KPMG</div>
+        <div class="scrolling-title">
+            <img src="trend.png" alt="Trend Icon"> Key Trends in Agentic AI
+        </div>
+        <div class="scrolling-text">
+            <span class="scrolling-box">Autonomous Decision-Making with Agentic AI</span>
+            <span class="scrolling-box">Context-Aware AI Systems</span>
+            <span class="scrolling-box">Resource-Efficient AI Solutions</span>
+            <span class="scrolling-box">Self-Learning & Continuous Improvement in AI</span>
+            <span class="scrolling-box">Multi-Modal AI Capabilities</span>
+            <span class="scrolling-box">AI for Task-Oriented Automation</span>
+            <span class="scrolling-box">Scalable & Cost-Effective AI Deployment</span>
+            <span class="scrolling-box">Enhanced Human-AI Collaboration</span>
+            <span class="scrolling-box">Ethical AI and Transparency</span>
+            <span class="scrolling-box">Data-Driven Predictive Insights with Agentic AI</span>
+            <span class="scrolling-box">AI for Dynamic Problem Solving</span>
+            <span class="scrolling-box">Real-Time AI Feedback and Adaptation</span>
+            <span class="scrolling-box">Intelligent Virtual Assistants powered by Agentic AI</span>
+            <span class="scrolling-box">AI for Personalized User Experiences</span>
+            <span class="scrolling-box">Autonomous Workflow Automation</span>
+        </div>
+    </div><div class="footer">Powered by KPMG</div>
 </body>
 </html>
