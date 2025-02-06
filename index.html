@@ -18,7 +18,100 @@
         flex-direction: column;
         align-items: center;
     }
-    .header-container {
+    .content {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+        margin-top: 40px;
+    }
+    .chatbot-container {
+        width: 400px;
+        height: 650px;
+        border: none;
+        border-radius: 20px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        overflow: hidden;
+        background: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(10px);
+        display: flex;
+        flex-direction: column;
+    }
+    .chatbot-header {
+        background: linear-gradient(90deg, #002E6D, #0091DA, #A7A8AA);
+        color: white;
+        padding: 15px;
+        font-size: 22px;
+        font-weight: bold;
+        text-transform: uppercase;
+        text-align: center;
+    }
+    .chatbot-frame {
+        width: 100%;
+        height: calc(100% - 110px);
+        border: none;
+    }
+    .drag-container {
+        display: grid;
+        grid-template-columns: repeat(3, 200px);
+        gap: 20px;
+        margin-bottom: 20px;
+    }
+.draggable {
+    width: 100%;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.3);
+    color: white;  /* White text for visibility */
+    border-radius: 10px;
+    text-align: center;
+    cursor: grab;
+    font-weight: bold;
+    user-select: none; /* Disable text selection */
+    font-size: 15px;  /* Increased font size for the buttons */
+}
+    .drop-zone {
+        width: 600px;
+        height: 300px;  /* Fixed height */
+        background: rgba(255, 255, 255, 0.2);
+        border: 2px dashed #A8C9E5;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-size: 15px;
+        font-weight: bold;
+        color: white;
+        overflow: hidden;  /* Prevent content from increasing drop zone size */
+        padding: 10px;     /* Some padding for inner spacing */
+        box-sizing: border-box;
+        position: relative;
+    }
+    .dropped-item {
+        width: 100%;
+        max-width: 200px;  /* Set fixed size for dropped items */
+        padding: 15px;
+        background: rgba(255, 255, 255, 0.3);
+        color: white;
+        border-radius: 10px;
+        text-align: center;
+        cursor: not-allowed;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+    .correct {
+        background: rgba(0, 255, 0, 0.4) !important;
+    }
+    .incorrect {
+        background: rgba(255, 0, 0, 0.4) !important;
+    }
+
+
+  .header-container {
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -64,77 +157,11 @@
     .demo-button:hover {
         background-color: rgba(255, 255, 255, 0.5); /* Increase opacity on hover */
     }
-    .content {
-        text-align: center;
-        margin-bottom: 20px;
-        margin-top: 0px;
-    }
-    .content h1 {
-        font-size: 36px;
-        margin: 0;
-    }
-    .content p {
-        font-size: 16px;
-        margin-top: 10px;
-        line-height: 1.5;
-    }
-    .chatbot-wrapper {
-        display: flex;
-        justify-content: flex-start;
-        flex-wrap: wrap;
-        gap: 20px;
-        width: 100%;
-    }
-    .chatbot-container {
-        width: 400px;
-        height: 650px;
-        border: none;
-        border-radius: 20px;
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-        overflow: hidden;
-        background: #ffffff;
-        display: flex;
-        flex-direction: column;
-        margin-left: 200px;
-    }
-    .chatbot-header {
-        background: linear-gradient(90deg, #002E6D, #0091DA, #A7A8AA);
-        color: white;
-        padding: 15px;
-        font-size: 22px;
-        font-weight: bold;
-        text-transform: uppercase;
-        text-align: center;
-    }
-    .event-description {
-        font-size: 14px;
-        font-weight: 500;
-        padding: 10px;
-        color: #666;
-        background-color: #f7f7f7;
-        text-align: center;
-    }
-    .chatbot-frame {
-        width: 100%;
-        height: calc(100% - 110px);
-        border: none;
-    }
-    .footer {
-        background-color: #00274d;
-        color: white;
-        font-size: 12px;
-        padding: 8px 0;
-        text-align: center;
-    }
-    .copilot-text-container {
-        margin-top: 20px;
-        text-align: center;
-        font-size: 14px;
-        font-weight: bold;
-    }
+
 </style>
 </head>
 <body>
+
 <div class="header-container">
     <div class="logo-container">
         
@@ -142,28 +169,66 @@
     </div>
     <div class="button-container">
         <button class="navigate-button" onclick="window.location.href='welcome.html'">Home Page</button>
+        <button class="navigate-button" onclick="window.location.href='index2.html'">Use Case </button>
+
     </div>
 </div>
+
 <div class="content">
     <h1>Welcome to LEAP 2025 Agentic AI Virtual Assistants</h1>
-    <p>
-        Explore LEAP 2025 with our AI Assistants—innovate, inspire, and enjoy!
-    </p>
+    <p>Explore LEAP 2025 with our AI Assistants—innovate, inspire, and enjoy!</p>
 </div>
-<div class="chatbot-wrapper">
+
+<div class="container">
+    <!-- Chatbot container -->
     <div class="chatbot-container">
         <div class="chatbot-header">Agentic AI Agent</div>
-        <div class="event-description">
-            Unlock exclusive <strong>LEAP 2025</strong> Agentic AI content.
+        <iframe class="chatbot-frame" src="https://copilotstudio.microsoft.com/environments/Default-fc3b3043-d920-470a-8ae0-b2610bb2aea5/bots/cr0c2_qaAgent/webchat?__version__=2"></iframe>
+    </div>
+
+    <!-- Draggable buttons -->
+    <div>
+        <div class="drag-container">
+            <div class="draggable" draggable="true" data-correct="true">Agentic AI can make decisions and take actions, while traditional LLMs only respond to prompts</div>
+            <div class="draggable" draggable="true" data-correct="true">Agentic AI interacts with external tools, but traditional LLMs just generate text</div>
+            <div class="draggable" draggable="true" data-correct="false">Agentic AI requires Cloud infrastructure</div>
+            <div class="draggable" draggable="true" data-correct="true">Agentic AI using small LLM models can be more  more efficient than traditional large LLMs</div>
+            <div class="draggable" draggable="true" data-correct="false">Traditional LLMs answer one question at a time</div>
+            <div class="draggable" draggable="true" data-correct="false">Agentic AI follows only predefined rules, similar to traditional LLMs
+</div>
         </div>
-
-   
-       <iframe src="https://copilotstudio.microsoft.com/environments/Default-fc3b3043-d920-470a-8ae0-b2610bb2aea5/bots/cr0c2_myAgent_0DgLY1/webchat?__version__=2" frameborder="0" style="width: 100%; height: 100%;"></iframe>
-
-        <div class="footer">Powered by KPMG</div>
+        
+        <!-- Drop zone for items -->
+        <div class="drop-zone">Drop Here</div>
     </div>
 </div>
-<div class="copilot-text-container">
-</div>
+
+<script>
+    const draggables = document.querySelectorAll('.draggable');
+    const dropZone = document.querySelector('.drop-zone');
+
+    draggables.forEach(draggable => {
+        draggable.addEventListener('dragstart', (e) => {
+            e.dataTransfer.setData('text/plain', e.target.innerText);
+            e.dataTransfer.setData('correct', e.target.dataset.correct);
+        });
+    });
+
+    dropZone.addEventListener('dragover', (e) => {
+        e.preventDefault();
+    });
+
+    dropZone.addEventListener('drop', (e) => {
+        e.preventDefault();
+        let correct = e.dataTransfer.getData('correct') === 'true';
+        let draggedText = e.dataTransfer.getData('text/plain');
+
+        let droppedElement = document.createElement('div');
+        droppedElement.innerText = draggedText;
+        droppedElement.classList.add('dropped-item');
+        droppedElement.classList.add(correct ? 'correct' : 'incorrect');
+        dropZone.appendChild(droppedElement);
+    });
+</script>
 </body>
 </html>
